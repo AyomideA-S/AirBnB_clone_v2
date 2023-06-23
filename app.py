@@ -17,7 +17,7 @@ if len(all_places) == 0:
         all_places = storage.all(Place)
     except:
         all_places = storage.all("Place")
-    
+
 
 places_by_name = {}
 
@@ -28,12 +28,9 @@ for p_id in all_places.keys():
 
 for p_name in sorted(places_by_name.keys()):
     place = places_by_name[p_name]
-    print("place: {}".format(place.name))
+    print(f"place: {place.name}")
     if place.amenities is None:
         continue
-    amenities_names = []
-    for amenity in place.amenities:
-        amenities_names.append(amenity.name)
-    
+    amenities_names = [amenity.name for amenity in place.amenities]
     for a_name in sorted(amenities_names):
-        print("\tamenity: {}".format(a_name))
+        print(f"\tamenity: {a_name}")

@@ -105,7 +105,7 @@ class test_Amenity_BaseModel(unittest.TestCase):
         Testin str magic method
         """
         inst = Amenity()
-        str_output = "[Amenity] ({}) {}".format(inst.id, inst.__dict__)
+        str_output = f"[Amenity] ({inst.id}) {inst.__dict__}"
         self.assertEqual(str_output, str(inst))
 
     @patch('models.storage')
@@ -170,5 +170,5 @@ class TestAmenity(unittest.TestCase):
     def test_str(self):
         """test that the str method has the correct output"""
         amenity = Amenity()
-        string = "[Amenity] ({}) {}".format(amenity.id, amenity.__dict__)
+        string = f"[Amenity] ({amenity.id}) {amenity.__dict__}"
         self.assertEqual(string, str(amenity))

@@ -11,9 +11,7 @@ class test_fileStorage(unittest.TestCase):
 
     def setUp(self):
         """ Set up test environment """
-        del_list = []
-        for key in storage._FileStorage__objects.keys():
-            del_list.append(key)
+        del_list = list(storage._FileStorage__objects.keys())
         for key in del_list:
             del storage._FileStorage__objects[key]
 

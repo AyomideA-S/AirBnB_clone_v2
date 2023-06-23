@@ -62,7 +62,7 @@ class test_basemodel(unittest.TestCase):
         """ Testing save """
         i = self.value()
         i.save()
-        key = self.name + "." + i.id
+        key = f"{self.name}.{i.id}"
         with open('file.json', 'r') as f:
             j = json.load(f)
             self.assertEqual(j[key], i.to_dict())
@@ -70,8 +70,7 @@ class test_basemodel(unittest.TestCase):
     def test_str(self):
         """ """
         i = self.value()
-        self.assertEqual(str(i), '[{}] ({}) {}'.format(self.name, i.id,
-                         i.__dict__))
+        self.assertEqual(str(i), f'[{self.name}] ({i.id}) {i.__dict__}')
 
     def test_todict(self):
         """ """
@@ -129,8 +128,7 @@ class test_basemodel(unittest.TestCase):
     def test_str_method(self):
         """Testing returns STR method"""
         instance6 = BaseModel()
-        string_output = "[BaseModel] ({}) {}".format(instance6.id,
-                                                     instance6.__dict__)
+        string_output = f"[BaseModel] ({instance6.id}) {instance6.__dict__}"
         self.assertEqual(string_output, str(instance6))
 
 
@@ -150,14 +148,14 @@ class TestCodeFormat(unittest.TestCase):
 class Test_docstrings(unittest.TestCase):
     """Test docstrings"""
     @classmethod
-    def setup_class(self):
+    def setup_class(cls):
         """
         inspect.getmembers(object, [predicate])
         Return all the members of an object in a list of (name, value)
         pairs sorted by name
         only members for which the predicate returns a true value are included
         """
-        self.obj_members(BaseModel, inspect.isfunction)
+        cls.obj_members(BaseModel, inspect.isfunction)
 
 
 class TestBaseModel(unittest.TestCase):
