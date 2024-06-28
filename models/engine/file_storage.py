@@ -54,7 +54,7 @@ class FileStorage:
         for key, value in self.__objects.items():
             my_dict[key] = value.to_dict()
         with open(self.__file_path, 'w', encoding="UTF-8") as f:
-            json.dump(my_dict, f)
+            json.dump(my_dict, f, indent=2)
 
     def reload(self):
         """serialize the file path to JSON file path
