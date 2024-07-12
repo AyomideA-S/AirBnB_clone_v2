@@ -2,6 +2,7 @@
 """A module for Fabric script that generates a .tgz archive."""
 import os
 from datetime import datetime
+
 from fabric.api import local, runs_once
 
 
@@ -17,7 +18,7 @@ def do_pack():
         d_time.day,
         d_time.hour,
         d_time.minute,
-        d_time.second
+        d_time.second,
     )
     try:
         print("Packing web_static to {}".format(output))
