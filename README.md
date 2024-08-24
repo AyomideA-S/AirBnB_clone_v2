@@ -1,40 +1,4 @@
-# AirBnB_clone
-An AirBnB clone for the ALX Software Engineering course.
+<center> <h1>HBNB - The Console</h1> </center>
 
-## How to start it
-```bash
-$ ./console.py
-```
-
-## How to use it
-```bash
-(hbnb) help
-
-Documented commands (type help <topic>):
-========================================
-EOF  help  quit
-```
-
-## Examples
-```bash
-$ echo "help" | ./console.py
-(hbnb)
-
-Documented commands (type help <topic>):
-========================================
-EOF  help  quit
-(hbnb) 
-$
-$ cat test_help
-help
-$
-$ cat test_help | ./console.py
-(hbnb)
-
-Documented commands (type help <topic>):
-========================================
-EOF  help  quit
-(hbnb) 
-$
-```
+This repository contains the initial stage of a student project to build a clone of the AirBnB website. This stage implements a backend interface, or console, to manage program data. Console commands allow the user to create, update, and destroy objects, as well as manage file storage. Using a system of JSON serialization/deserialization, storage is persistent between sessions.
 
